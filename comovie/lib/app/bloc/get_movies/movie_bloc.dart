@@ -1,4 +1,5 @@
 import 'package:bloc/bloc.dart';
+import 'package:comovie/app/domain/get_movies/objects/get_movies_response_object.dart';
 import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';

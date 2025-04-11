@@ -289,7 +289,8 @@ abstract class LoadNextPage implements MovieEvent {
 
 /// @nodoc
 mixin _$MovieState {
-// required List<Movie> movies,
+  List<GetMoviesResponseObject> get movies =>
+      throw _privateConstructorUsedError;
   bool get isLoading => throw _privateConstructorUsedError;
   bool get isAppendingPage => throw _privateConstructorUsedError;
   bool get hasLastPage => throw _privateConstructorUsedError;
@@ -309,7 +310,8 @@ abstract class $MovieStateCopyWith<$Res> {
       _$MovieStateCopyWithImpl<$Res, MovieState>;
   @useResult
   $Res call(
-      {bool isLoading,
+      {List<GetMoviesResponseObject> movies,
+      bool isLoading,
       bool isAppendingPage,
       bool hasLastPage,
       String? errorMessage});
@@ -330,12 +332,17 @@ class _$MovieStateCopyWithImpl<$Res, $Val extends MovieState>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? movies = null,
     Object? isLoading = null,
     Object? isAppendingPage = null,
     Object? hasLastPage = null,
     Object? errorMessage = freezed,
   }) {
     return _then(_value.copyWith(
+      movies: null == movies
+          ? _value.movies
+          : movies // ignore: cast_nullable_to_non_nullable
+              as List<GetMoviesResponseObject>,
       isLoading: null == isLoading
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
@@ -365,7 +372,8 @@ abstract class _$$MovieStateImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {bool isLoading,
+      {List<GetMoviesResponseObject> movies,
+      bool isLoading,
       bool isAppendingPage,
       bool hasLastPage,
       String? errorMessage});
@@ -384,12 +392,17 @@ class __$$MovieStateImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? movies = null,
     Object? isLoading = null,
     Object? isAppendingPage = null,
     Object? hasLastPage = null,
     Object? errorMessage = freezed,
   }) {
     return _then(_$MovieStateImpl(
+      movies: null == movies
+          ? _value._movies
+          : movies // ignore: cast_nullable_to_non_nullable
+              as List<GetMoviesResponseObject>,
       isLoading: null == isLoading
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
@@ -414,12 +427,21 @@ class __$$MovieStateImplCopyWithImpl<$Res>
 
 class _$MovieStateImpl implements _MovieState {
   const _$MovieStateImpl(
-      {required this.isLoading,
+      {required final List<GetMoviesResponseObject> movies,
+      required this.isLoading,
       required this.isAppendingPage,
       required this.hasLastPage,
-      required this.errorMessage});
+      required this.errorMessage})
+      : _movies = movies;
 
-// required List<Movie> movies,
+  final List<GetMoviesResponseObject> _movies;
+  @override
+  List<GetMoviesResponseObject> get movies {
+    if (_movies is EqualUnmodifiableListView) return _movies;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_movies);
+  }
+
   @override
   final bool isLoading;
   @override
@@ -431,7 +453,7 @@ class _$MovieStateImpl implements _MovieState {
 
   @override
   String toString() {
-    return 'MovieState(isLoading: $isLoading, isAppendingPage: $isAppendingPage, hasLastPage: $hasLastPage, errorMessage: $errorMessage)';
+    return 'MovieState(movies: $movies, isLoading: $isLoading, isAppendingPage: $isAppendingPage, hasLastPage: $hasLastPage, errorMessage: $errorMessage)';
   }
 
   @override
@@ -439,6 +461,7 @@ class _$MovieStateImpl implements _MovieState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$MovieStateImpl &&
+            const DeepCollectionEquality().equals(other._movies, _movies) &&
             (identical(other.isLoading, isLoading) ||
                 other.isLoading == isLoading) &&
             (identical(other.isAppendingPage, isAppendingPage) ||
@@ -451,7 +474,12 @@ class _$MovieStateImpl implements _MovieState {
 
   @override
   int get hashCode => Object.hash(
-      runtimeType, isLoading, isAppendingPage, hasLastPage, errorMessage);
+      runtimeType,
+      const DeepCollectionEquality().hash(_movies),
+      isLoading,
+      isAppendingPage,
+      hasLastPage,
+      errorMessage);
 
   /// Create a copy of MovieState
   /// with the given fields replaced by the non-null parameter values.
@@ -464,12 +492,14 @@ class _$MovieStateImpl implements _MovieState {
 
 abstract class _MovieState implements MovieState {
   const factory _MovieState(
-      {required final bool isLoading,
+      {required final List<GetMoviesResponseObject> movies,
+      required final bool isLoading,
       required final bool isAppendingPage,
       required final bool hasLastPage,
       required final String? errorMessage}) = _$MovieStateImpl;
 
-// required List<Movie> movies,
+  @override
+  List<GetMoviesResponseObject> get movies;
   @override
   bool get isLoading;
   @override
