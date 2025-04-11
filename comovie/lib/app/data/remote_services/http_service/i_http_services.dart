@@ -1,4 +1,4 @@
-import 'package:comovie/presentation/core/response.dart';
+import 'package:dio/dio.dart';
 
 abstract class IHttpServices {
   Future<Response> get(String url, {Map<String, dynamic>? params,Map<String, String>? headers});
