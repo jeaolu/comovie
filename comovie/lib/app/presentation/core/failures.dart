@@ -1,4 +1,4 @@
-import 'package:comovie/presentation/core/constants/app_constants.dart';
+import 'package:comovie/app/presentation/core/constants/app_constants.dart';
 
 abstract class Failure {
   final String message;
