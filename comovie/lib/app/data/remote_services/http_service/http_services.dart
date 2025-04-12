@@ -1,7 +1,7 @@
 import 'package:comovie/app/data/remote_services/http_service/i_http_services.dart';
 import 'package:dio/dio.dart';
 
-class HttpCServices implements IHttpServices {
+class HttpServices implements IHttpServices {
   final Dio _dio = Dio();
 
   @override
