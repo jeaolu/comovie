@@ -1,4 +1,5 @@
 import 'package:comovie/app/presentation/core/cool_movie.dart';
+import 'package:comovie/app/presentation/core/themes/theme_observer.dart';
 class CoolMovieApp extends StatelessWidget {
   const CoolMovieApp({super.key});
 
@@ -16,15 +17,17 @@ class CoolMovieApp extends StatelessWidget {
           create: (_) => locator<MovieBloc>(),
         ),
       ],
-      child: BlocBuilder<ThemeBloc, ThemeState>(
-        builder: (context, state) {
-          return MaterialApp(
-            debugShowCheckedModeBanner: false,
-            theme: state.theme,
-            home: const MovieHomePage(),
-          );
-        },
-      ),
-    );
+      child: ThemeObserver( 
+    child: BlocBuilder<ThemeBloc, ThemeState>(
+      builder: (context, state) {
+        return MaterialApp(
+          debugShowCheckedModeBanner: false,
+          theme: state.theme,
+          home: const MovieHomePage(),
+        );
+      },
+    ),
+  ),
+);
   }
 }

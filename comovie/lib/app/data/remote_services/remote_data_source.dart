@@ -8,26 +8,32 @@ import 'package:comovie/app/presentation/core/failures.dart';
 import 'package:comovie/app/presentation/core/utils/constants.dart';
 import 'package:dartz/dartz.dart';
 
-class RemoteDataSource implements IRemoteDataSource{
-  final IHttpServices _iHttpServices;
+// class RemoteDataSource implements IRemoteDataSource{
+//   final IHttpServices _iHttpServices;
 
-  RemoteDataSource(this._iHttpServices);
+//   RemoteDataSource(this._iHttpServices);
   
-  @override
-  Future<List<GetMoviesResponseObject>> getAllMovies() async {
+//   @override
+//   Future<List<GetMoviesResponseObject>> getAllMovies() {
+//     // TODO: implement getAllMovies
+//     throw UnimplementedError();
+//   }
+  
+//   @override
+//   // Future<List<GetMoviesResponseObject>> getAllMovies() async {
     
-      final res = await _iHttpServices.get(ApiConstants.getMovies);
-      if (res.statusCode == 200) {
-      final List<dynamic> jsonResponse = json.decode(res.data) as List<dynamic>;
-      return jsonResponse
-          .map((jsonItem) => GetMoviesResponseObject.fromJson(jsonItem))
-          .toList();
+//   //     final res = await _iHttpServices.get(ApiConstants.getMovies);
+//   //     if (res.statusCode == 200) {
+//   //     final List<dynamic> jsonResponse = json.decode(res.data) as List<dynamic>;
+//   //     return jsonResponse
+//   //         .map((jsonItem) => GetMoviesResponseObject.fromJson(jsonItem))
+//   //         .toList();
       
-      }
-      return GetMoviesResponseObject;
+//   //     }
+//   //     return GetMoviesResponseObject;
       
       
-      }
+//   //     }
 
   
-}
+// }
