@@ -3,7 +3,7 @@ part of 'movie_bloc.dart';
 @freezed
 class MovieState with _$MovieState {
    const factory MovieState({
-    required List<GetMoviesResponseObject> movies,
+    required List<MovieModel> movies,
     required bool isLoading,
     required bool isAppendingPage,
     required bool hasLastPage,

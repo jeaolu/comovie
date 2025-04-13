@@ -289,8 +289,7 @@ abstract class LoadNextPage implements MovieEvent {
 
 /// @nodoc
 mixin _$MovieState {
-  List<GetMoviesResponseObject> get movies =>
-      throw _privateConstructorUsedError;
+  List<MovieModel> get movies => throw _privateConstructorUsedError;
   bool get isLoading => throw _privateConstructorUsedError;
   bool get isAppendingPage => throw _privateConstructorUsedError;
   bool get hasLastPage => throw _privateConstructorUsedError;
@@ -310,7 +309,7 @@ abstract class $MovieStateCopyWith<$Res> {
       _$MovieStateCopyWithImpl<$Res, MovieState>;
   @useResult
   $Res call(
-      {List<GetMoviesResponseObject> movies,
+      {List<MovieModel> movies,
       bool isLoading,
       bool isAppendingPage,
       bool hasLastPage,
@@ -342,7 +341,7 @@ class _$MovieStateCopyWithImpl<$Res, $Val extends MovieState>
       movies: null == movies
           ? _value.movies
           : movies // ignore: cast_nullable_to_non_nullable
-              as List<GetMoviesResponseObject>,
+              as List<MovieModel>,
       isLoading: null == isLoading
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
@@ -372,7 +371,7 @@ abstract class _$$MovieStateImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {List<GetMoviesResponseObject> movies,
+      {List<MovieModel> movies,
       bool isLoading,
       bool isAppendingPage,
       bool hasLastPage,
@@ -402,7 +401,7 @@ class __$$MovieStateImplCopyWithImpl<$Res>
       movies: null == movies
           ? _value._movies
           : movies // ignore: cast_nullable_to_non_nullable
-              as List<GetMoviesResponseObject>,
+              as List<MovieModel>,
       isLoading: null == isLoading
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
@@ -427,16 +426,16 @@ class __$$MovieStateImplCopyWithImpl<$Res>
 
 class _$MovieStateImpl implements _MovieState {
   const _$MovieStateImpl(
-      {required final List<GetMoviesResponseObject> movies,
+      {required final List<MovieModel> movies,
       required this.isLoading,
       required this.isAppendingPage,
       required this.hasLastPage,
       required this.errorMessage})
       : _movies = movies;
 
-  final List<GetMoviesResponseObject> _movies;
+  final List<MovieModel> _movies;
   @override
-  List<GetMoviesResponseObject> get movies {
+  List<MovieModel> get movies {
     if (_movies is EqualUnmodifiableListView) return _movies;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_movies);
@@ -492,14 +491,14 @@ class _$MovieStateImpl implements _MovieState {
 
 abstract class _MovieState implements MovieState {
   const factory _MovieState(
-      {required final List<GetMoviesResponseObject> movies,
+      {required final List<MovieModel> movies,
       required final bool isLoading,
       required final bool isAppendingPage,
       required final bool hasLastPage,
       required final String? errorMessage}) = _$MovieStateImpl;
 
   @override
-  List<GetMoviesResponseObject> get movies;
+  List<MovieModel> get movies;
   @override
   bool get isLoading;
   @override

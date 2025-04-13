@@ -99,10 +99,10 @@ class __$$SystemChangedImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? brightness = freezed,
+    Object? brightness = null,
   }) {
     return _then(_$SystemChangedImpl(
-      freezed == brightness
+      null == brightness
           ? _value.brightness
           : brightness // ignore: cast_nullable_to_non_nullable
               as Brightness,
@@ -128,13 +128,12 @@ class _$SystemChangedImpl implements _SystemChanged {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$SystemChangedImpl &&
-            const DeepCollectionEquality()
-                .equals(other.brightness, brightness));
+            (identical(other.brightness, brightness) ||
+                other.brightness == brightness));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(brightness));
+  int get hashCode => Object.hash(runtimeType, brightness);
 
   /// Create a copy of ThemeEvent
   /// with the given fields replaced by the non-null parameter values.
@@ -360,10 +359,10 @@ class _$ThemeStateCopyWithImpl<$Res, $Val extends ThemeState>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? theme = freezed,
+    Object? theme = null,
   }) {
     return _then(_value.copyWith(
-      theme: freezed == theme
+      theme: null == theme
           ? _value.theme
           : theme // ignore: cast_nullable_to_non_nullable
               as ThemeData,
@@ -395,10 +394,10 @@ class __$$ThemeStateImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? theme = freezed,
+    Object? theme = null,
   }) {
     return _then(_$ThemeStateImpl(
-      theme: freezed == theme
+      theme: null == theme
           ? _value.theme
           : theme // ignore: cast_nullable_to_non_nullable
               as ThemeData,
@@ -424,12 +423,11 @@ class _$ThemeStateImpl implements _ThemeState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ThemeStateImpl &&
-            const DeepCollectionEquality().equals(other.theme, theme));
+            (identical(other.theme, theme) || other.theme == theme));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(theme));
+  int get hashCode => Object.hash(runtimeType, theme);
 
   /// Create a copy of ThemeState
   /// with the given fields replaced by the non-null parameter values.

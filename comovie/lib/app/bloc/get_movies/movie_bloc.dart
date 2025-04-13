@@ -10,18 +10,22 @@ part 'movie_state.dart';
 
 part 'movie_bloc.freezed.dart';
 
+@injectable
 class MovieBloc extends Bloc<MovieEvent, MovieState> {
   final IGetMoviesRepository _iMoviesRepository;
+  List<MovieModel> allMovies = [];
 
   MovieBloc(this._iMoviesRepository) : super(MovieState.initial()) {
     on<GetMovies>((event, emit) async {
       emit(state.copyWith(isLoading: true, errorMessage: null));
       final result = await _iMoviesRepository.getAllMovies();
       result.fold(
-      (failure) =>
-          emit(state.copyWith(isLoading: false, errorMessage: failure)),
-      (movies) => emit(state.copyWith(movies: movies, isLoading: false)),
-    );
+        (failure) => emit(state.copyWith(isLoading: false, errorMessage: failure)),
+        (movies) {
+          allMovies = movies;
+          emit(state.copyWith(movies: movies, isLoading: false));
+        },
+      );
     });
     on<LoadNextPage>((event, emit) async {
       if (state.isAppendingPage || state.hasLastPage) return;

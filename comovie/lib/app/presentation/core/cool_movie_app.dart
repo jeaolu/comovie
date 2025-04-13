@@ -14,7 +14,8 @@ class CoolMovieApp extends StatelessWidget {
             )),
         ),
         BlocProvider<MovieBloc>(
-          create: (_) => locator<MovieBloc>(),
+          create: (_) => getIt<MovieBloc>()..add(GetMovies()),
+          // create: (_) => locator<MovieBloc>(),
         ),
       ],
       child: ThemeObserver( 
@@ -23,7 +24,7 @@ class CoolMovieApp extends StatelessWidget {
         return MaterialApp(
           debugShowCheckedModeBanner: false,
           theme: state.theme,
-          home: const MovieHomePage(),
+          home: const MovieHomeScreen(),
         );
       },
     ),

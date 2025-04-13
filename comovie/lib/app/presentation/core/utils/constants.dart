@@ -10,8 +10,8 @@ class AppStrings {
 }
 
 class ApiConstants {
-  static String appBaseUrl = 'https://api.domyheritage.com/api/v1';
-  static String getMovies = '$appBaseUrl/fetch_movies';
+  static String appBaseUrl = 'https://moviesdatabase.p.rapidapi.com';
+  static String getMovies = '$appBaseUrl/titles/x/upcoming';
   
 }
 

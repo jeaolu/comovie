@@ -1,6 +1,8 @@
 import 'package:comovie/app/data/remote_services/http_service/i_http_services.dart';
 import 'package:dio/dio.dart';
+import 'package:injectable/injectable.dart';
 
+@LazySingleton(as: IHttpServices)
 class HttpServices implements IHttpServices {
   final Dio _dio = Dio();
 
