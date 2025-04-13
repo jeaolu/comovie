@@ -11,7 +11,7 @@ class AppStrings {
 
 class ApiConstants {
   static String appBaseUrl = 'https://moviesdatabase.p.rapidapi.com';
-  static String getMovies = '$appBaseUrl/titles/x/upcoming';
+  static String getMovies = 'https://api.themoviedb.org/3/movie/popular?api_key=cdcd6bace1e2399e52462e54bf6c308c';
   
 }
 
@@ -32,3 +32,51 @@ class ColorManager {
   static const Color lightBackgroundColor = Color(0xFFF5F5F5);
   static const Color transparent = Color(0x00FFFFFF);
 }
+
+
+
+
+// class MovieCard extends StatelessWidget {
+//   final Movie movie;
+
+//   const MovieCard({super.key, required this.movie});
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return InkWell(
+//   onTap: () {
+//     Navigator.of(context).push(
+//       PageRouteBuilder(
+//         transitionDuration: const Duration(milliseconds: 500),
+//         pageBuilder: (context, animation, secondaryAnimation) {
+//           return FadeTransition(
+//             opacity: animation,
+//             child: MovieDetailScreen(movie: movie),
+//           );
+//         },
+//       ),
+//     );
+//   },
+// //   onTap: () {
+// //   context.router.push(MovieDetailRoute(movie: movie));
+// // },
+
+//   child: Padding(
+//     padding: const EdgeInsets.all(15),
+//     child: Hero(
+//       tag: movie.title,
+//       child: ClipRRect(
+//         borderRadius: const BorderRadius.vertical(top: Radius.circular(16)),
+//         child: Image.network(
+//           movie.imageUrl,
+//           height: 200,
+//           width: double.infinity,
+//           fit: BoxFit.cover,
+//         ),
+//       ),
+//     ),
+//   ),
+// )
+// ;
+//   }
+// }

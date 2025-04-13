@@ -1,4 +1,3 @@
-// dart format width=80
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 // **************************************************************************
@@ -18,7 +17,8 @@ import 'package:comovie/app/data/remote_services/i_remote_data_source.dart'
     as _i151;
 import 'package:comovie/app/data/remote_services/remote_data_source.dart'
     as _i154;
-import 'package:comovie/app/domain/get_movies/get_movies_repository.dart';
+import 'package:comovie/app/domain/get_movies/get_movies_repository.dart'
+    as _i419;
 import 'package:comovie/app/domain/i_get_movies_repository.dart' as _i277;
 import 'package:comovie/injectable_module.dart' as _i54;
 import 'package:dio/dio.dart' as _i361;
@@ -38,11 +38,12 @@ extension GetItInjectableX on _i174.GetIt {
     );
     final injectableModule = _$InjectableModule();
     gh.lazySingleton<_i361.Dio>(() => injectableModule.dio);
-    gh.lazySingleton<_i690.IHttpServices>(() => _i478.HttpServices());
+    gh.lazySingleton<_i690.IHttpServices>(
+        () => _i478.HttpServices(gh<_i361.Dio>()));
     gh.lazySingleton<_i151.IRemoteDataSource>(
         () => _i154.RemoteDataSource(gh<_i690.IHttpServices>()));
     gh.lazySingleton<_i277.IGetMoviesRepository>(
-        () => GetMoviesRepository(gh<_i151.IRemoteDataSource>()));
+        () => _i419.GetMoviesRepository(gh<_i151.IRemoteDataSource>()));
     gh.factory<_i502.MovieBloc>(
         () => _i502.MovieBloc(gh<_i277.IGetMoviesRepository>()));
     return this;

@@ -1,10 +1,27 @@
 import 'package:comovie/app/data/remote_services/http_service/i_http_services.dart';
 import 'package:dio/dio.dart';
+import 'package:flutter/foundation.dart';
 import 'package:injectable/injectable.dart';
-
+import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 @LazySingleton(as: IHttpServices)
 class HttpServices implements IHttpServices {
-  final Dio _dio = Dio();
+  final Dio _dio;
+
+
+  HttpServices(this._dio,) {
+    _dio.options.receiveTimeout = const Duration(milliseconds: 60 * 1000);
+    _dio.options.sendTimeout = const Duration(milliseconds: 60 * 1000);
+    if (kDebugMode) {
+      _dio.interceptors.add(PrettyDioLogger(
+          requestHeader: true,
+          requestBody: true,
+          responseBody: true,
+          responseHeader: false,
+          error: true,
+          compact: true,
+          maxWidth: 90));
+    }
+  }
 
   @override
   Future<Response> delete(String url, {Map<String, String>? headers}) async {

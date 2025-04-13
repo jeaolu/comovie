@@ -1,7 +1,11 @@
 import 'package:comovie/app/presentation/core/cool_movie.dart';
+import 'package:comovie/app/presentation/core/routes/app_router.dart';
 import 'package:comovie/app/presentation/core/themes/theme_observer.dart';
+
 class CoolMovieApp extends StatelessWidget {
-  const CoolMovieApp({super.key});
+  // final _appRouter = getIt<AppRouter>();
+   CoolMovieApp({super.key});
+  
 
   @override
   Widget build(BuildContext context) {
@@ -15,16 +19,18 @@ class CoolMovieApp extends StatelessWidget {
         ),
         BlocProvider<MovieBloc>(
           create: (_) => getIt<MovieBloc>()..add(GetMovies()),
-          // create: (_) => locator<MovieBloc>(),
         ),
       ],
       child: ThemeObserver( 
     child: BlocBuilder<ThemeBloc, ThemeState>(
       builder: (context, state) {
         return MaterialApp(
+          // routeInformationParser: _appRouter.defaultRouteParser(),
+          // routerDelegate: _appRouter.delegate(),
+
           debugShowCheckedModeBanner: false,
           theme: state.theme,
-          home: const MovieHomeScreen(),
+          home: const MovieHomePage(),
         );
       },
     ),
