@@ -1,9 +1,9 @@
 import 'dart:convert';
-import 'package:comovie/app/data/remote_services/http_service/i_http_services.dart';
-import 'package:comovie/app/data/remote_services/i_remote_data_source.dart';
-import 'package:comovie/app/domain/get_movies/objects/get_movies_response_object.dart';
-import 'package:comovie/app/presentation/core/api_execptions.dart';
-import 'package:comovie/app/presentation/core/utils/constants.dart';
+import 'package:comovie/infrastructure/remote_services/http_service/i_http_services.dart';
+import 'package:comovie/infrastructure/remote_services/i_remote_data_source.dart';
+import 'package:comovie/domain/get_movies/objects/get_movies_response_object.dart';
+import 'package:comovie/presentation/core/api_execptions.dart';
+import 'package:comovie/presentation/core/utils/constants.dart';
 import 'package:injectable/injectable.dart';
 
 @LazySingleton(as: IRemoteDataSource)

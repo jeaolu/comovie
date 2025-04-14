@@ -1,6 +1,6 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:comovie/app/bloc/get_movies/movie_bloc.dart';
-import 'package:comovie/app/presentation/pages/movies_home/widgets/movie_cards.dart';
+import 'package:comovie/application/get_movies/movie_bloc.dart';
+import 'package:comovie/presentation/movies_home/widgets/movie_cards.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';

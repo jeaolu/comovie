@@ -1,5 +1,5 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:comovie/app/domain/get_movies/objects/get_movies_response_object.dart';
+import 'package:comovie/domain/get_movies/objects/get_movies_response_object.dart';
 import 'package:flutter/material.dart';
 import 'package:animate_do/animate_do.dart';
 

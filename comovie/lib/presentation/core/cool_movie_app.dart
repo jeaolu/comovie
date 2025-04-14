@@ -1,6 +1,6 @@
-import 'package:comovie/app/presentation/core/cool_movie.dart';
-import 'package:comovie/app/presentation/core/routes/app_router.dart';
-import 'package:comovie/app/presentation/core/themes/theme_observer.dart';
+import 'package:comovie/presentation/core/cool_movie.dart';
+import 'package:comovie/routes/app_router.dart';
+import 'package:comovie/presentation/core/themes/theme_observer.dart';
 
 class CoolMovieApp extends StatelessWidget {
   // final _appRouter = getIt<AppRouter>();

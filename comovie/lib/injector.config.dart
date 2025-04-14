@@ -8,18 +8,18 @@
 // coverage:ignore-file
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
-import 'package:comovie/app/bloc/get_movies/movie_bloc.dart' as _i502;
-import 'package:comovie/app/data/remote_services/http_service/http_services.dart'
+import 'package:comovie/application/get_movies/movie_bloc.dart' as _i502;
+import 'package:comovie/infrastructure/remote_services/http_service/http_services.dart'
     as _i478;
-import 'package:comovie/app/data/remote_services/http_service/i_http_services.dart'
+import 'package:comovie/infrastructure/remote_services/http_service/i_http_services.dart'
     as _i690;
-import 'package:comovie/app/data/remote_services/i_remote_data_source.dart'
+import 'package:comovie/infrastructure/remote_services/i_remote_data_source.dart'
     as _i151;
-import 'package:comovie/app/data/remote_services/remote_data_source.dart'
+import 'package:comovie/infrastructure/remote_services/remote_data_source.dart'
     as _i154;
-import 'package:comovie/app/domain/get_movies/get_movies_repository.dart'
+import 'package:comovie/infrastructure/get_movies/get_movies_repository.dart'
     as _i419;
-import 'package:comovie/app/domain/i_get_movies_repository.dart' as _i277;
+import 'package:comovie/domain/i_get_movies_repository.dart' as _i277;
 import 'package:comovie/injectable_module.dart' as _i54;
 import 'package:dio/dio.dart' as _i361;
 import 'package:get_it/get_it.dart' as _i174;

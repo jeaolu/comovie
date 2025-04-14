@@ -1,5 +1,5 @@
 // lib/di/injectable_module.dart
-import 'package:comovie/app/presentation/core/routes/app_router.dart';
+import 'package:comovie/routes/app_router.dart';
 import 'package:dio/dio.dart';
 import 'package:injectable/injectable.dart';
 

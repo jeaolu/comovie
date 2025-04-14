@@ -1,5 +1,5 @@
-import 'package:comovie/app/domain/get_movies/objects/get_movies_response_object.dart';
-import 'package:comovie/app/domain/i_get_movies_repository.dart';
+import 'package:comovie/domain/get_movies/objects/get_movies_response_object.dart';
+import 'package:comovie/domain/i_get_movies_repository.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';

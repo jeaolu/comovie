@@ -1,4 +1,4 @@
-import 'package:comovie/app/data/remote_services/http_service/i_http_services.dart';
+import 'package:comovie/infrastructure/remote_services/http_service/i_http_services.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
 import 'package:injectable/injectable.dart';

@@ -1,5 +1,5 @@
-import 'package:comovie/app/domain/get_movies/objects/get_movies_response_object.dart';
-import 'package:comovie/app/presentation/pages/movies_home/movie_detail_page.dart';
+import 'package:comovie/domain/get_movies/objects/get_movies_response_object.dart';
+import 'package:comovie/presentation/movies_home/movie_detail_page.dart';
 import 'package:flutter/material.dart';
 
 class MovieCard extends StatelessWidget {

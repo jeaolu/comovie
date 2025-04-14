@@ -1,4 +1,4 @@
-import 'package:comovie/app/presentation/core/themes/theme/bloc/theme_bloc.dart';
+import 'package:comovie/presentation/core/themes/theme/bloc/theme_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
