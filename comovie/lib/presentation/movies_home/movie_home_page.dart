@@ -16,13 +16,13 @@ class MovieHomePage extends StatelessWidget {
       body: BlocBuilder<MovieBloc, MovieState>(
         builder: (context, state) {
           if (state.isLoading) {
-            return const SpinKitFadingCube( // Or: ChasingDots, Pulse, FadingCircle, etc.
+            return const SpinKitFadingCube( 
   color: Colors.red,
   size: 25,
 );
           }
           if (state.errorMessage != null) {
-            return Center(child: Text('Error: ${state.errorMessage}'));
+            return Center(child: Text('Error: Something Went Wrong!!'));
           }
           if (state.movies.isEmpty) {
             return const Center(child: Text('No movies found.'));
