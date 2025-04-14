@@ -12,5 +12,4 @@ class GetMoviesRepository implements IGetMoviesRepository {
   Future<List<MovieModel>> getAllMovies()async {
      return await _iRemoteDataSource.getAllMovies();
   }
- 
   }
