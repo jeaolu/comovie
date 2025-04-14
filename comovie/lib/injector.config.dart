@@ -46,10 +46,12 @@ extension GetItInjectableX on _i174.GetIt {
         () => injectableModule.connectionChecker);
     gh.lazySingleton<_i598.IHttpServices>(
         () => _i703.HttpServices(gh<_i361.Dio>()));
-    gh.lazySingleton<_i795.IRemoteDataSource>(
-        () => _i391.RemoteDataSource(gh<_i598.IHttpServices>()));
     gh.lazySingleton<_i845.INetworkInfo>(
         () => _i845.NetworkInfo(gh<_i973.InternetConnectionChecker>()));
+    gh.lazySingleton<_i795.IRemoteDataSource>(() => _i391.RemoteDataSource(
+          gh<_i598.IHttpServices>(),
+          gh<_i845.INetworkInfo>(),
+        ));
     gh.lazySingleton<_i388.IGetMoviesRepository>(
         () => _i86.GetMoviesRepository(gh<_i795.IRemoteDataSource>()));
     gh.factory<_i885.MovieBloc>(

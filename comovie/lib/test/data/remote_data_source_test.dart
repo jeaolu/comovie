@@ -1,8 +1,10 @@
 import 'dart:convert';
 import 'package:comovie/domain/get_movies/objects/get_movies_response_object.dart';
 import 'package:comovie/infrastructure/remote_services/http_service/i_http_services.dart';
+import 'package:comovie/infrastructure/remote_services/internet_checker/internet_info.dart';
 import 'package:comovie/infrastructure/remote_services/remote_data_source.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:internet_connection_checker/internet_connection_checker.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:dio/dio.dart';
 
@@ -12,9 +14,13 @@ void main() {
   late MockHttpService mockHttpService;
   late RemoteDataSource dataSource;
 
+late InternetConnectionChecker  mockConnectionChecker;
   setUp(() {
     mockHttpService = MockHttpService();
-    dataSource = RemoteDataSource(mockHttpService);
+    mockConnectionChecker = mockConnectionChecker;
+
+
+    dataSource = RemoteDataSource(mockHttpService,mockConnectionChecker as INetworkInfo);
   });
 
   group('RemoteDataSource.getAllMovies', () {
